@@ -10,13 +10,13 @@ export default function Footer() {
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-3">Get the FreshCart app</h2>
           <p className="text-gray-600 mb-6 font-medium">We will send you a link, open it on your phone to download the app.</p>
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <input
               type="email"
               placeholder="Email"
-              className="w-3/4 px-5 py-4 bg-white border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
+              className="w-full sm:w-[70%] px-5 py-4 bg-white border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
             />
-            <button className="w-1/4 bg-red-600 hover:bg-red-700 text-white  py-4 px-8 rounded-xl">
+            <button className="w-full sm:w-[30%] bg-red-600 hover:bg-red-700 text-white py-4 px-8 rounded-xl font-bold transition-all whitespace-nowrap">
               Share App Link
             </button>
           </div>

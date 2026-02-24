@@ -89,16 +89,16 @@ export default function AllOrders() {
                             <div key={order.id} className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md">
 
                                 <div className="bg-gray-50/50 px-8 py-6 border-b border-gray-100">
-                                    <div className="flex flex-wrap items-center justify-between gap-6">
-                                        <div className="flex gap-10">
+                                    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                                        <div className="flex flex-wrap gap-4 sm:gap-10">
                                             <div>
                                                 <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-1">Order Identifier</p>
-                                                <p className="text-sm font-bold text-gray-900">#{order.id}</p>
+                                                <p className="text-sm font-bold text-gray-900 truncate max-w-[120px] sm:max-w-none">#{order.id}</p>
                                             </div>
                                             <div>
                                                 <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-1">Order Date</p>
                                                 <div className="flex items-center text-sm font-medium text-gray-700">
-                                                    <Calendar className="w-4 h-4 mr-2 text-gray-400" />
+                                                    <Calendar className="w-4 h-4 mr-2 text-gray-400 hidden sm:block" />
                                                     {new Date(order.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                                                 </div>
                                             </div>
