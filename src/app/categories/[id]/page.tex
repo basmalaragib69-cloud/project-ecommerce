@@ -1,0 +1,33 @@
+"use client";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
+import { getCategoryById } from '@/app/ipa/caregrisepage';
+import { Category } from '@/app/types/product.type';
+
+
+export default function CategoryDetails() {
+  const params = useParams();
+  const [category, setCategory] = useState<Category | null>(null);
+  console.log(params);
+
+
+  useEffect(() => {
+    if (params?.id) {
+      getCategoryById(params.id as string).then((res) => setCategory(res.data));
+    }
+  }, [params?.id]);
+
+  if (!category) return <div className="p-20 text-center">Loading Category...</div>;
+
+  return (
+    <div className="p-20 text-center">
+      <h1 className="text-4xl font-bold text-cyan-950">{category.name}</h1>
+      <img
+        src={category.image}
+        alt={category.name}
+        className="mx-auto mt-8 w-80 h-80 object-contain rounded-2xl shadow-2xl"
+      />
+      <p className="mt-4 text-gray-500 text-sm">Category ID: {params.id}</p>
+    </div>
+  );
+}
